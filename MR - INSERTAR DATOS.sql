@@ -2,27 +2,27 @@
 USE ENCUESTA;
 GO
 
--- insertar datos tabla [DISEÑA]
+-- insertar datos tabla [DISEÃ‘A]
 
-INSERT [dbo].[DISEÑA] ([id_diseña], [id_responsable], [id_encuesta]) 
+INSERT [dbo].[DISEÃ‘A] ([id_diseÃ±a], [id_responsable], [id_encuesta]) 
 VALUES (2100, 1001, 5001)
 
-INSERT [dbo].[DISEÑA] ([id_diseña], [id_responsable], [id_encuesta]) 
+INSERT [dbo].[DISEÃ‘A] ([id_diseÃ±a], [id_responsable], [id_encuesta]) 
 VALUES (2101, 1002, 5002)
 
-INSERT [dbo].[DISEÑA] ([id_diseña], [id_responsable], [id_encuesta]) 
+INSERT [dbo].[DISEÃ‘A] ([id_diseÃ±a], [id_responsable], [id_encuesta]) 
 VALUES (2102, 1003, 5003)
 GO
 
 -- insertar datos tabla [RESPONSABLE]
 
-INSERT [dbo].[RESPONSABLE] ([id_responsable], [id_diseña], [dni_respon], [nombre_respon], [correo_respon], [cel_respon]) 
+INSERT [dbo].[RESPONSABLE] ([id_responsable], [id_diseÃ±a], [dni_respon], [nombre_respon], [correo_respon], [cel_respon]) 
 VALUES (1001, 2100, 42454748, N'Jorge Morales',N'jmorales@gmail.com','+51996857441')
 
-INSERT [dbo].[RESPONSABLE] ([id_responsable], [id_diseña], [dni_respon], [nombre_respon], [correo_respon], [cel_respon]) 
+INSERT [dbo].[RESPONSABLE] ([id_responsable], [id_diseÃ±a], [dni_respon], [nombre_respon], [correo_respon], [cel_respon]) 
 VALUES (1002, 2101, 65255663, N'Brayan Maduro',N'bmaduro@outlook.com','+54585856592')
 
-INSERT [dbo].[RESPONSABLE] ([id_responsable], [id_diseña], [dni_respon], [nombre_respon], [correo_respon], [cel_respon]) 
+INSERT [dbo].[RESPONSABLE] ([id_responsable], [id_diseÃ±a], [dni_respon], [nombre_respon], [correo_respon], [cel_respon]) 
 VALUES (1003, 2102, 25658559, N'Jhon Smith',N'jsmith@microsoft.com','+50255669855')
 GO
 
@@ -40,13 +40,13 @@ GO
 
 -- insertar datos tabla [ENCUESTA]
 
-INSERT [dbo].[ENCUESTA] ([id_encuesta], [id_diseña], [titulo_encu], [descripcion_encu], [id_linea], [fecha_inicio_encu], [fecha_fin_encu])
+INSERT [dbo].[ENCUESTA] ([id_encuesta], [id_diseÃ±a], [titulo_encu], [descripcion_encu], [id_linea], [fecha_inicio_encu], [fecha_fin_encu])
 VALUES (5001, 2100, N'Encuesta de satisfaccion', N'2023 - Encuesta de satisfaccion', 3011, '2023-01-01','2023-12-31')
 GO
-INSERT [dbo].[ENCUESTA] ([id_encuesta], [id_diseña], [titulo_encu], [descripcion_encu], [id_linea], [fecha_inicio_encu], [fecha_fin_encu])
+INSERT [dbo].[ENCUESTA] ([id_encuesta], [id_diseÃ±a], [titulo_encu], [descripcion_encu], [id_linea], [fecha_inicio_encu], [fecha_fin_encu])
 VALUES (5002, 2101, N'Encuesta de satisfaccion', N'2023 - Encuesta de satisfaccion', 3012, '2023-01-01','2023-12-31')
 GO
-INSERT [dbo].[ENCUESTA] ([id_encuesta], [id_diseña], [titulo_encu], [descripcion_encu], [id_linea], [fecha_inicio_encu], [fecha_fin_encu])
+INSERT [dbo].[ENCUESTA] ([id_encuesta], [id_diseÃ±a], [titulo_encu], [descripcion_encu], [id_linea], [fecha_inicio_encu], [fecha_fin_encu])
 VALUES (5003, 2102, N'Encuesta de satisfaccion', N'2023 - Encuesta de satisfaccion', 3013, '2023-01-01','2023-12-31')
 GO
 
