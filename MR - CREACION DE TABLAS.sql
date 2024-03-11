@@ -10,7 +10,7 @@ GO
 /*3*/	IF OBJECT_ID('LINEAXPREGUNTA') IS NOT NULL DROP TABLE LINEAXPREGUNTA;
 /*4*/	IF OBJECT_ID('RESPUESTA') IS NOT NULL DROP TABLE RESPUESTA;
 /*5*/	IF OBJECT_ID('RESPONSABLE') IS NOT NULL DROP TABLE RESPONSABLE;
-/*6*/	IF OBJECT_ID('DISEÑA') IS NOT NULL DROP TABLE DISEÑA;
+/*6*/	IF OBJECT_ID('DISEÃ‘A') IS NOT NULL DROP TABLE DISEÃ‘A;
 /*7*/	IF OBJECT_ID('PREGUNTA') IS NOT NULL DROP TABLE PREGUNTA;
 /*8*/	IF OBJECT_ID('ENCUESTA') IS NOT NULL DROP TABLE ENCUESTA;
 /*9*/	IF OBJECT_ID('LINEA') IS NOT NULL DROP TABLE LINEA;	
@@ -22,16 +22,16 @@ GO
 CREATE TABLE RESPONSABLE
 (
 	id_responsable	int not null,
-	id_diseña		int not null,
+	id_diseÃ±a		int not null,
 	dni_respon		char(8),
 	nombre_respon	varchar(45),
 	correo_respon	varchar(45),
 	cel_respon		varchar(12),
 )
 
-CREATE TABLE DISEÑA
+CREATE TABLE DISEÃ‘A
 (
-	id_diseña	int not null,
+	id_diseÃ±a	int not null,
 	id_responsable	int not null,
 	id_encuesta	int not null,
 )
@@ -39,7 +39,7 @@ CREATE TABLE DISEÑA
 CREATE TABLE ENCUESTA
 (
 	id_encuesta		int not null,
-	id_diseña		int not null,
+	id_diseÃ±a		int not null,
 	titulo_encu		varchar(45),
 	descripcion_encu	varchar(45),
 	id_linea		int not null,
@@ -113,7 +113,7 @@ go
 --modificacion de tablas para llaves primarias
 
 ALTER TABLE RESPONSABLE ADD CONSTRAINT pk_responsables PRIMARY KEY (id_responsable)
-ALTER TABLE DISEÑA ADD CONSTRAINT pk_diseña PRIMARY KEY (id_diseña)
+ALTER TABLE DISEÃ‘A ADD CONSTRAINT pk_diseÃ±a PRIMARY KEY (id_diseÃ±a)
 ALTER TABLE USUARIO ADD CONSTRAINT pk_usuarios PRIMARY KEY (id_usuario)
 ALTER TABLE RADICA ADD CONSTRAINT pk_radica PRIMARY KEY (id_radica)
 ALTER TABLE ZONA ADD CONSTRAINT pk_zonas PRIMARY KEY (id_zona)
@@ -139,7 +139,7 @@ ALTER TABLE RADICA ADD CONSTRAINT uq_radica UNIQUE (id_radica)
 ALTER TABLE LINEAXPREGUNTA ADD CONSTRAINT uq_lineXpreg UNIQUE (id_lineaXpregunta)
 ALTER TABLE PREGUNTA ADD CONSTRAINT uq_preguntas UNIQUE (id_pregunta)
 ALTER TABLE RESPONSABLE ADD CONSTRAINT uq_responsables UNIQUE (id_responsable)
-ALTER TABLE DISEÑA ADD CONSTRAINT uq_diseña UNIQUE (id_diseña)
+ALTER TABLE DISEÃ‘A ADD CONSTRAINT uq_diseÃ±a UNIQUE (id_diseÃ±a)
 go
 
 --modificaciones de tablas para llaves foraneas
@@ -167,11 +167,11 @@ FOREIGN KEY (id_linea) REFERENCES LINEA (id_linea)
 
 ALTER TABLE RESPONSABLE
 ADD CONSTRAINT fk_responsable_encuesta
-FOREIGN KEY (id_diseña) REFERENCES DISEÑA (id_diseña)
+FOREIGN KEY (id_diseÃ±a) REFERENCES DISEÃ‘A (id_diseÃ±a)
 
 ALTER TABLE ENCUESTA
 ADD CONSTRAINT fk_encuesta_responsable
-FOREIGN KEY (id_diseña) REFERENCES DISEÑA (id_diseña)
+FOREIGN KEY (id_diseÃ±a) REFERENCES DISEÃ‘A (id_diseÃ±a)
 
 ALTER TABLE LINEAXPREGUNTA
 ADD CONSTRAINT fk_preguntaXlinea_pregunta
