@@ -3,7 +3,7 @@
 USE ENCUESTA;
 GO
 
---1.	En el último semestre ¿Cuál es el promedio de satisfacción de clientes mujeres mujeres en la linea BELLEZA?
+--1.	En el Ãºltimo semestre Â¿CuÃ¡l es el promedio de satisfacciÃ³n de clientes mujeres mujeres en la linea BELLEZA?
 
 
 SELECT 
@@ -16,7 +16,7 @@ WHERE MONTH(fecha_inte) IN (7,8,9,10,11,12)
 	AND id_linea = '3013'
 
 
---2.	¿Cuál es el promedio del nivel de satisfacción el servicio de personas mayores de 65 años en la línea BLANCA durante el último mes?
+--2.	Â¿CuÃ¡l es el promedio del nivel de satisfacciÃ³n el servicio de personas mayores de 65 aÃ±os en la lÃ­nea BLANCA durante el Ãºltimo mes?
 
 SELECT 
 	COUNT (DISTINCT X.id_intento) AS Personas, CAST(ROUND(AVG(item_resp),2) AS DEC(10,2)) promedio 
@@ -29,7 +29,7 @@ WHERE MONTH(fecha_inte) IN (12)
 	AND id_linea = 3011
 
 
---3.	¿Cuales son las zonas de ventas con mayor satisfacción (prom >=4) de usuarios en el último trimestre?
+--3.	Â¿Cuales son las zonas de ventas con mayor satisfacciÃ³n (prom >=4) de usuarios en el Ãºltimo trimestre?
 
 SELECT nombre_zona, ROUND(AVG(item_resp),2) AS satisfaccion 
 FROM RESPUESTA R
@@ -44,7 +44,7 @@ HAVING AVG(item_resp) >= 4
 ORDER BY satisfaccion DESC 
 
 
---4.	¿Cuales son las líneas de ventas con mayor insatisfacción (prom <2) de usuarios en este último mes?
+--4.	Â¿Cuales son las lÃ­neas de ventas con mayor insatisfacciÃ³n (prom <2) de usuarios en este Ãºltimo mes?
 
 SELECT nombre_linea, AVG(item_resp) AS insatisfaccion 
 FROM RESPUESTA R
@@ -57,7 +57,7 @@ HAVING AVG(item_resp) <= 2
 ORDER BY insatisfaccion DESC 
 
 
---5.	¿Cuál es el promedio de mayor insatifacción (prom <= 2) de clientes varones menores de 20 años en la línea MODA en noviembre 2023?
+--5.	Â¿CuÃ¡l es el promedio de mayor insatifacciÃ³n (prom <= 2) de clientes varones menores de 20 aÃ±os en la lÃ­nea MODA en noviembre 2023?
 
 SELECT COUNT (DISTINCT X.id_intento) AS #Clientes, AVG(item_resp) AS Promedio
 FROM intento X
@@ -70,7 +70,7 @@ WHERE (CONVERT(INTEGER,DATEDIFF(DAY,fec_nac_usua, GETDATE())/365.25)<20) AND MON
 	AND R.item_resp <= 2
 
 
---6.	En el último mes-calendario ¿cuál fue la línea de ventas con clientes mujeres menores de 30 años mas satisfechas (prom >=4)? 
+--6.	En el Ãºltimo mes-calendario Â¿cuÃ¡l fue la lÃ­nea de ventas con clientes mujeres menores de 30 aÃ±os mas satisfechas (prom >=4)? 
 
 SELECT 
 	nombre_linea, AVG(item_resp) AS satisfaccion, COUNT(*) AS N
@@ -86,7 +86,7 @@ HAVING AVG(item_resp) >= 4.0
 ORDER BY satisfaccion DESC 
 
 
---7.	En el último mes-calendario ¿Cuál es el promedio del nivel de satisfechos de la calidad del producto de la línea BLANCA?
+--7.	En el Ãºltimo mes-calendario Â¿CuÃ¡l es el promedio del nivel de satisfechos de la calidad del producto de la lÃ­nea BLANCA?
 
 SELECT 
 	 nombre_linea, AVG(item_resp) AS satisfaccion 
@@ -99,7 +99,7 @@ WHERE MONTH(fecha_inte) IN (12)
 GROUP BY nombre_linea
 
 
---8.	¿Cómo ha evolucionado la satisfacción promedio de los usuarios por trimestres? 
+--8.	Â¿CÃ³mo ha evolucionado la satisfacciÃ³n promedio de los usuarios por trimestres? 
 
 SELECT
 	 Trimestre, ROUND(AVG(item_resp),2) AS Promedio
@@ -117,7 +117,7 @@ FROM
 GROUP BY Trimestre
 
 
---9. ¿Cuales son las líneas de ventas con mayor satisfacción (prom >=4) de usuarios en el último trimestre? 
+--9. Â¿Cuales son las lÃ­neas de ventas con mayor satisfacciÃ³n (prom >=4) de usuarios en el Ãºltimo trimestre? 
  
 SELECT nombre_linea, ROUND(AVG(item_resp),2) AS satisfaccion 
 FROM RESPUESTA R
@@ -130,7 +130,7 @@ HAVING AVG(item_resp) >= 4.0
 ORDER BY satisfaccion DESC 
 
 
---	10.	¿Cuáles son las zonas que presentan algun grado de insatisfechos (promedio<=4) de cada zona?
+--	10.	Â¿CuÃ¡les son las zonas que presentan algun grado de insatisfechos (promedio<=4) de cada zona?
 
 SELECT  nombre_zona, ROUND(AVG(item_resp),2) AS satisfaccion 
 FROM RESPUESTA R
